@@ -13,7 +13,16 @@ class AddNote extends StatelessWidget {
           Gap(
             height: 30,
           ),
-          CustomTextField()
+          CustomTextField(
+            hint: "omar",
+          ),
+          Gap(
+            height: 30,
+          ),
+          CustomTextField(
+            hint: "Contant",
+            maxLine: 5,
+          ),
         ],
       ),
     );

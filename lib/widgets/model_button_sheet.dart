@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:todo/widgets/custom_text_filed.dart';
+
+import 'gap.dart';
 
 class AddNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextFormField(
-          enabled: true,
-          decoration: InputDecoration(),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(
+        children: [
+          Gap(
+            height: 30,
+          ),
+          CustomTextField()
+        ],
+      ),
     );
   }
 }

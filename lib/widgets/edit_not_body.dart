@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/widgets/custom_app_bar.dart';
+import 'package:todo/widgets/custom_text_filed.dart';
 import 'package:todo/widgets/gap.dart';
 
 class EditNoteBody extends StatelessWidget {
@@ -18,6 +19,14 @@ class EditNoteBody extends StatelessWidget {
             title: "Edit Note",
             icon: Icons.check,
           ),
+          Gap(
+            height: 30,
+          ),
+          CustomTextField(hint: "Title"),
+          Gap(
+            height: 20,
+          ),
+          CustomTextField(hint: "content", maxLine: 5),
         ],
       ),
     );

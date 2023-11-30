@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Gap extends StatelessWidget {
-  double height;
-  double width;
+  final double height;
+  final double width;
   Gap({
     Key? key,
     this.height = 0,

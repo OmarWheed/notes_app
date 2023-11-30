@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo/widgets/custom_app_bar.dart';
 
 import '../widgets/edit_not_body.dart';
 

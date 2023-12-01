@@ -1,3 +1,6 @@
+import 'package:todo/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:todo/models/note_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'custom_bottom.dart';
 import 'custom_text_filed.dart';
 import 'gap.dart';
@@ -41,14 +44,25 @@ class _AddNoteFormState extends State<AddNoteForm> {
           Gap(
             height: 30,
           ),
-          MyButton(
-            onTap: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return MyButton(
+                isLoading: state is AddNoteLoading ? true : false,
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    NoteModel note = NoteModel(
+                        title: title!,
+                        subTitle: subTitle!,
+                        date: DateTime.now().toString(),
+                        color: Colors.blueGrey.value);
+                    BlocProvider.of<AddNoteCubit>(context).addNote(note);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           Gap(

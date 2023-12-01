@@ -1,5 +1,4 @@
 import 'package:intl/intl.dart';
-
 import 'package:todo/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:todo/models/note_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
